@@ -1,4 +1,4 @@
-import type ComponentStructure from "../types.js";
+import type ComponentStructure from '../../types/types.js';
 
 class Component implements ComponentStructure {
   domElement: HTMLElement;
@@ -6,7 +6,7 @@ class Component implements ComponentStructure {
   constructor(
     private readonly parentElement: HTMLElement,
     className: string,
-    tag = "div"
+    tag = 'div'
   ) {
     this.domElement = document.createElement(tag);
     this.domElement.className = className;

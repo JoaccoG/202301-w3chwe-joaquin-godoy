@@ -5,11 +5,49 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Change this title!</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./assets/favicon.png">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/9426ee65de.js" crossorigin="anonymous"></script>
+  <!-- JS -->
+  <script defer type="module" src="./js/index.js"></script>
+  <title>Pokemon | Pokedex</title>
 </head>
 
 <body>
-  <div class="root"></div>
+
+  <!-- Header Component -->
+  <header>
+    <nav class="navbar">
+      <ul class="navbar__menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Favorites</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- Card List Component -->
+    <ul class="card__list">
+      <li class="card-list__item"></li>
+    </ul>
+
+    <!-- Card Component -->
+    <article class="card">
+      <img class="card__image" src="./assets/bulbasur.png" alt="bulbasur">
+      <p class="card__id">1 / 999</p>
+      <h3 class="card__name">bulbasur</h3>
+      <div class="card__info1">
+        <p>weight: <span>6.9kg</span></p>
+        <p>height: <span>0.7m</span></p>
+      </div>
+      <p class="card__info2">type: <span>grass</span></p>
+    </article>
+
+  </main>
 </body>
 
 </html>
