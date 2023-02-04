@@ -1,3 +1,6 @@
-import { getPokemonList } from './data/data.js';
+import { getPokemonList, pokemonsList } from './data/data.js';
 
-getPokemonList();
+getPokemonList(0);
+setTimeout(() => {
+  console.log(pokemonsList);
+}, 500);
