@@ -1,0 +1,154 @@
+.card {
+  width: 256px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.8rem;
+  text-transform: capitalize;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.8);
+  transition: all 150ms ease-in-out;
+  background-color: var(--card__bg-color);
+}
+.card:hover {
+  background-color: var(--card__bg-hover-color);
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.card-sprite__container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.card__sprite {
+  width: 60%;
+  position: absolute;
+  top: -50%;
+  left: 20%;
+}
+
+.card__id {
+  font-family: var(--sec-font);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: hsl(0, 0%, 60%);
+  margin-bottom: -0.9rem;
+}
+
+.card__name {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.card__info-size {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-family: var(--sec-font);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.card__info-type {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  row-gap: 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.card__info-type img {
+  outline: 1px solid gray;
+  outline-offset: -1.5px;
+  border-radius: 2rem;
+  width: 42px;
+  height: 42px;
+}
+
+/* -------->>> Types <<<-------- */
+.type--normal {
+  background-color: hsl(36, 100%, 90%);
+  color: black;
+}
+.type--fighting {
+  background-color: hsl(25, 75%, 47%);
+  color: white;
+}
+.type--flying {
+  background-color: hsl(219, 79%, 66%);
+  color: black;
+}
+.type--poison {
+  background-color: hsl(82, 39%, 30%);
+  color: white;
+}
+.type--ground {
+  background-color: hsl(34, 57%, 70%);
+  color: black;
+}
+.type--rock {
+  background-color: hsl(0, 68%, 42%);
+  color: white;
+}
+.type--bug {
+  background-color: hsl(80, 60%, 35%);
+  color: white;
+}
+.type--ghost {
+  background-color: hsl(248, 39%, 39%);
+  color: white;
+}
+.type--steel {
+  background-color: hsl(0, 0%, 29%);
+  color: white;
+}
+.type--fire {
+  background-color: hsl(2, 100%, 62%);
+  color: white;
+}
+.type--water {
+  background-color: hsl(195, 100%, 50%);
+  color: black;
+}
+.type--grass {
+  background-color: hsl(145, 40%, 58%);
+  color: black;
+}
+.type--electric {
+  background-color: hsl(51, 100%, 50%);
+  color: black;
+}
+.type--psychic {
+  background-color: hsl(351, 100%, 78%);
+  color: black;
+}
+.type--ice {
+  background-color: hsl(203, 92%, 75%);
+  columns: black;
+}
+.type--dragon {
+  background-color: hsl(180, 40%, 37%);
+  color: white;
+}
+.type--dark {
+  background-color: hsl(0, 0%, 15%);
+  color: white;
+}
+.type--fairy {
+  background-color: hsl(348, 74%, 54%);
+  color: white;
+}
+.type--unknown {
+  background-color: hsl(0, 0%, 80%);
+  columns: black;
+}
+.type--shadow {
+  background-color: hsl(280, 78%, 38%);
+  color: white;
+}

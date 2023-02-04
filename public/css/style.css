@@ -1,9 +1,27 @@
+/* -------->>> Fonts <<<-------- */
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600&display=swap");
+
+/* -------->>> Variables <<<-------- */
+:root {
+  --main-font: "Overpass", sans-serif;
+  --sec-font: "Space Grotesk", sans-serif;
+  --card__bg-color: hsl(40, 100%, 95%);
+  --card__bg-hover-color: hsl(40, 100%, 90%);
+}
+
+/* -------->>> Mixins <<<-------- */
+
+/* -------->>> Resets <<<-------- */
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: var(--main-font);
 }
 
 ul,
@@ -15,7 +33,26 @@ a {
   text-decoration: none;
 }
 
-.card__component {
+/* -------->>> Container <<<-------- */
+.container {
   width: 100%;
-  text-transform: capitalize;
+  min-height: 100vh;
+  padding: 6rem 1rem 1rem 1rem;
+  position: absolute;
+  background: url(../assets/background-img.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -100;
+}
+
+/* -------->>>  */
+.main__title {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+.main__title img {
+  width: 40%;
 }

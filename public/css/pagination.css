@@ -1,0 +1,21 @@
+.pag__container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 100px;
+  margin: 2rem 0;
+}
+
+.pag__container i {
+  font-size: 3rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--card__bg-color);
+  border-radius: 1rem;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  transition: all 100ms ease;
+}
+
+.pag__container i:hover {
+  background-color: var(--card__bg-hover-color);
+}

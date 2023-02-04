@@ -1,0 +1,38 @@
+.navbar {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar__menu {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 3rem;
+  margin-top: 1.5rem;
+  background-color: var(--card__bg-color);
+  border-radius: 2rem;
+  border: 2px solid grey;
+}
+
+.navbar__menu li {
+  transition: all 100ms ease;
+}
+
+.navbar__menu li:hover {
+  transform: scale(1.08);
+}
+
+.navbar__menu li a {
+  color: black;
+  font-family: var(--sec-font);
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0.2rem 1rem;
+  background-color: var(--card__bg-hover-color);
+  border-radius: 1rem;
+  border: 2px solid grey;
+  text-transform: uppercase;
+}
