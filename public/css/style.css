@@ -55,4 +55,5 @@ a {
 }
 .main__title img {
   width: 40%;
+  min-width: 300px;
 }

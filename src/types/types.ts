@@ -5,3 +5,7 @@ interface ComponentStructure {
 }
 
 export default ComponentStructure;
+
+export interface PokemonsList {
+  id: number;
+}
