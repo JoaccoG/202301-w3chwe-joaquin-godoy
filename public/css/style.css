@@ -5,14 +5,11 @@
 :root {
   --main-font: "Overpass", sans-serif;
   --sec-font: "Space Grotesk", sans-serif;
-
-  --main-color: #000;
-  --main-color-bg: #000;
-  --sec-color: #fff;
-  --sec-color-bg: #fff;
-  --third-color: #333;
-  --fourth-color: #888;
+  --card__bg-color: hsl(40, 100%, 95%);
+  --card__bg-hover-color: hsl(40, 100%, 90%);
 }
+
+/* -------->>> Mixins <<<-------- */
 
 /* -------->>> Resets <<<-------- */
 *,
@@ -36,6 +33,26 @@ a {
   text-decoration: none;
 }
 
+/* -------->>> Container <<<-------- */
 .container {
-  padding: 2rem;
+  width: 100%;
+  min-height: 100vh;
+  padding: 6rem 1rem 1rem 1rem;
+  position: absolute;
+  background: url(../assets/background-img.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -100;
+}
+
+/* -------->>>  */
+.main__title {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+.main__title img {
+  width: 40%;
 }

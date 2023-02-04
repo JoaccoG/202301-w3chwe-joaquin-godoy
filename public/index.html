@@ -8,14 +8,16 @@
   <!-- Favicon -->
   <link rel="shortcut icon" href="./assets/favicon.png">
   <!-- CSS -->
-  <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/card.css">
   <link rel="stylesheet" href="./css/card-list.css">
+  <link rel="stylesheet" href="./css/pagination.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/style.css">
   <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/9426ee65de.js" crossorigin="anonymous"></script>
   <!-- JS -->
   <script defer type="module" src="./js/index.js"></script>
-  <title>Pokemon | Pokedex</title>
+  <title>Pokedex w/PokeAPI</title>
 </head>
 
 <body>
@@ -24,13 +26,32 @@
   <header>
     <nav class="navbar">
       <ul class="navbar__menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Favorites</a></li>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Favorites</a>
+        </li>
       </ul>
     </nav>
   </header>
 
   <main class="container">
+
+    <!-- Title Component -->
+    <div class="main__title">
+      <img src="./assets/pokemon-logo.svg" alt="logo">
+    </div>
+
+    <!-- Previous/Next Page Component -->
+    <div class="pag__container">
+      <div class="pag-container__previous">
+        <i class="fa-solid fa-angle-left"></i>
+      </div>
+      <div class="pag-container__next">
+        <i class="fa-solid fa-angle-right"></i>
+      </div>
+    </div>
 
     <!-- Card List Component -->
     <ul class="card__list">
@@ -38,19 +59,19 @@
 
         <!-- Card Component -->
         <article class="card">
-          <img class="card__image"
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif"
-            alt="bulbasur">
+          <div class="card-sprite__container">
+            <img class="card__sprite"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif"
+              alt="bulbasur">
+          </div>
           <p class="card__id">N° 001</p>
           <h3 class="card__name">bulbasur</h3>
           <div class="card__info-size">
-            <p>weight: <span>6.9kg</span></p>
-            |
-            <p>height: <span>0.7m</span></p>
+            <p>weight: <span>6.9kg</span></p>|<p>height: <span>0.7m</span></p>
           </div>
           <div class="card__info-type">
-            <p class="type--grass">grass</p>
-            <p class="type--poison">poison</p>
+            <img src="./assets/pokemon-types/type-12-grass.png" alt="type grass">
+            <img src="./assets/pokemon-types/type-4-poison.png" alt="type poison">
           </div>
         </article>
 
@@ -58,18 +79,18 @@
       <li class="card-list__item">
 
         <article class="card">
-          <img class="card__image"
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/4.gif"
-            alt="charmander">
+          <div class="card-sprite__container">
+            <img class="card__sprite"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/4.gif"
+              alt="charmander">
+          </div>
           <p class="card__id">N° 004</p>
           <h3 class="card__name">charmander</h3>
           <div class="card__info-size">
-            <p>weight: <span>5.8kg</span></p>
-            |
-            <p>height: <span>1.2m</span></p>
+            <p>weight: <span>5.8kg</span></p>|<p>height: <span>1.2m</span></p>
           </div>
           <div class="card__info-type">
-            <p class="type--fire">fire</p>
+            <img src="./assets/pokemon-types/type-10-fire.png" alt="type fire">
           </div>
         </article>
 
@@ -77,19 +98,19 @@
       <li class="card-list__item">
 
         <article class="card">
-          <img class="card__image"
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/7.gif"
-            alt="squirtle">
+          <div class="card-sprite__container">
+            <img class="card__sprite"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/7.gif"
+              alt="squirtle">
+          </div>
           <p class="card__id">N° 007</p>
           <h3 class="card__name">squirtle</h3>
           <div class="card__info-size">
-            <p>weight: <span>7.9kg</span></p>
-            |
-            <p>height: <span>1.05m</span></p>
+            <p>weight: <span>7.9kg</span></p>|<p>height: <span>1.05m</span></p>
           </div>
           <div class="card__info-type">
-            <p class="type--ice">ice</p>
-            <p class="type--water">water</p>
+            <img src="./assets/pokemon-types/type-11-water.png" alt="type water">
+            <img src="./assets/pokemon-types/type-15-ice.png" alt="type ice">
           </div>
         </article>
 
@@ -97,19 +118,18 @@
       <li class="card-list__item">
 
         <article class="card">
-          <img class="card__image"
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif"
-            alt="pikachu">
+          <div class="card-sprite__container">
+            <img class="card__sprite"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif"
+              alt="pikachu">
+          </div>
           <p class="card__id">N° 025</p>
           <h3 class="card__name">pikachu</h3>
           <div class="card__info-size">
-            <p>weight: <span>5.3kg</span></p>
-            |
-            <p>height: <span>0.9m</span></p>
+            <p>weight: <span>5.3kg</span></p>|<p>height: <span>0.9m</span></p>
           </div>
           <div class="card__info-type">
-            <p class="type--normal">normal</p>
-            <p class="type--electric">electric</p>
+            <img src="./assets//pokemon-types/type-13-electric.png" alt="type electric">
           </div>
         </article>
 
