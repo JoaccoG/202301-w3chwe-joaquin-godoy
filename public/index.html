@@ -9,6 +9,8 @@
   <link rel="shortcut icon" href="./assets/favicon.png">
   <!-- CSS -->
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/card.css">
+  <link rel="stylesheet" href="./css/card-list.css">
   <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/9426ee65de.js" crossorigin="anonymous"></script>
   <!-- JS -->
@@ -32,20 +34,87 @@
 
     <!-- Card List Component -->
     <ul class="card__list">
-      <li class="card-list__item"></li>
-    </ul>
+      <li class="card-list__item">
 
-    <!-- Card Component -->
-    <article class="card">
-      <img class="card__image" src="./assets/bulbasur.png" alt="bulbasur">
-      <p class="card__id">1 / 999</p>
-      <h3 class="card__name">bulbasur</h3>
-      <div class="card__info1">
-        <p>weight: <span>6.9kg</span></p>
-        <p>height: <span>0.7m</span></p>
-      </div>
-      <p class="card__info2">type: <span>grass</span></p>
-    </article>
+        <!-- Card Component -->
+        <article class="card">
+          <img class="card__image"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif"
+            alt="bulbasur">
+          <p class="card__id">N° 001</p>
+          <h3 class="card__name">bulbasur</h3>
+          <div class="card__info-size">
+            <p>weight: <span>6.9kg</span></p>
+            |
+            <p>height: <span>0.7m</span></p>
+          </div>
+          <div class="card__info-type">
+            <p class="type--grass">grass</p>
+            <p class="type--poison">poison</p>
+          </div>
+        </article>
+
+      </li>
+      <li class="card-list__item">
+
+        <article class="card">
+          <img class="card__image"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/4.gif"
+            alt="charmander">
+          <p class="card__id">N° 004</p>
+          <h3 class="card__name">charmander</h3>
+          <div class="card__info-size">
+            <p>weight: <span>5.8kg</span></p>
+            |
+            <p>height: <span>1.2m</span></p>
+          </div>
+          <div class="card__info-type">
+            <p class="type--fire">fire</p>
+          </div>
+        </article>
+
+      </li>
+      <li class="card-list__item">
+
+        <article class="card">
+          <img class="card__image"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/7.gif"
+            alt="squirtle">
+          <p class="card__id">N° 007</p>
+          <h3 class="card__name">squirtle</h3>
+          <div class="card__info-size">
+            <p>weight: <span>7.9kg</span></p>
+            |
+            <p>height: <span>1.05m</span></p>
+          </div>
+          <div class="card__info-type">
+            <p class="type--ice">ice</p>
+            <p class="type--water">water</p>
+          </div>
+        </article>
+
+      </li>
+      <li class="card-list__item">
+
+        <article class="card">
+          <img class="card__image"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif"
+            alt="pikachu">
+          <p class="card__id">N° 025</p>
+          <h3 class="card__name">pikachu</h3>
+          <div class="card__info-size">
+            <p>weight: <span>5.3kg</span></p>
+            |
+            <p>height: <span>0.9m</span></p>
+          </div>
+          <div class="card__info-type">
+            <p class="type--normal">normal</p>
+            <p class="type--electric">electric</p>
+          </div>
+        </article>
+
+      </li>
+    </ul>
 
   </main>
 </body>

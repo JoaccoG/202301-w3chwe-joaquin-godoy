@@ -1,9 +1,30 @@
+/* -------->>> Fonts <<<-------- */
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600&display=swap");
+
+/* -------->>> Variables <<<-------- */
+:root {
+  --main-font: "Overpass", sans-serif;
+  --sec-font: "Space Grotesk", sans-serif;
+
+  --main-color: #000;
+  --main-color-bg: #000;
+  --sec-color: #fff;
+  --sec-color-bg: #fff;
+  --third-color: #333;
+  --fourth-color: #888;
+}
+
+/* -------->>> Resets <<<-------- */
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: var(--main-font);
 }
 
 ul,
@@ -15,7 +36,6 @@ a {
   text-decoration: none;
 }
 
-.card__component {
-  width: 100%;
-  text-transform: capitalize;
+.container {
+  padding: 2rem;
 }
