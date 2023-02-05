@@ -20,10 +20,10 @@ export default class Card extends Component {
     render() {
         super.render();
         let types = '';
-        for (let i = 0; i < __classPrivateFieldGet(this, _Card_cardData, "f").types.length; i++) {
-            types = `
+        for (let type of __classPrivateFieldGet(this, _Card_cardData, "f").types) {
+            types += `
         <img
-          src="./assets/pokemon-types/${(this, __classPrivateFieldGet(this, _Card_cardData, "f").types[i].type.name)}"
+          src="./assets/pokemon-types/${type.type.name}"
           alt="${__classPrivateFieldGet(this, _Card_cardData, "f").name}"
         >
       `;
