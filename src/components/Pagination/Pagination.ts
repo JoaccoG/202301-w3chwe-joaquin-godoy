@@ -1,59 +1,61 @@
 import Component from '../Component/Component.js';
-import { pokemonsList, getPokemonList } from '../../data/data.js';
-import CardList from '../Card-List/Card-List.js';
 
 export default class Pagination extends Component {
   #leftArrow: HTMLElement;
   #rightArrow: HTMLElement;
-  #offset: number;
-  #cardList: CardList;
 
-  constructor(parentElement: HTMLElement, cardList: CardList) {
+  constructor(parentElement: HTMLElement) {
     super(parentElement, 'pag__container', 'div');
-    this.#offset = 0;
-    this.#cardList = cardList;
-    this.#leftArrow = this.generatePagination('left');
-    this.#rightArrow = this.generatePagination('right');
+    this.#leftArrow = document.createElement('div');
+    this.#rightArrow = document.createElement('div');
   }
 
   render(): void {
     super.render();
+    this.generatePagination(this.#leftArrow, 'left');
+    this.generatePagination(this.#rightArrow, 'right');
     this.eventHandlers();
   }
 
-  generatePagination(direction: string): HTMLElement {
-    let container: HTMLElement = document.createElement('div');
-    container.className = `pag-container__${direction}`;
-    let arrow: HTMLElement = document.createElement('i');
-    arrow.className = `fa-solid fa-angle-${direction}`;
-    container.appendChild(arrow);
-    this.domElement.appendChild(container);
-    return container;
+  generatePagination(arrow: HTMLElement, direction: string): void {
+    arrow.innerHTML = `
+        <i class="fa-solid fa-angle-${direction}"></i>
+    `;
+    arrow.className = `pag-container__${direction}`;
+    this.domElement.appendChild(arrow);
   }
 
   eventHandlers(): void {
     let main: HTMLElement | null = document.querySelector('.container');
     this.#leftArrow.addEventListener('click', () => {
-      this.#offset > 0 ? (this.#offset -= 20) : (this.#offset = 0);
-      getPokemonList(this.#offset).then(() => {
-        pokemonsList.splice(-20, 20);
-        this.#cardList.remove();
-        if (main) {
-          this.#cardList = new CardList(main, pokemonsList);
-        }
-        this.#cardList.render();
-      });
+      // if (this.#offset > 0) {
+      //   this.#offset -= 20;
+      //   getPokemonList(this.#offset).then(() => {
+      //     pokemonsList.splice(-20, 20);
+      //     this.#cardList.remove();
+      //     if (main) {
+      //       this.#cardList = new CardList(main, pokemonsList);
+      //     }
+      //     this.#cardList.render();
+      //   });
+      // } else {
+      //   this.#offset = 0;
+      // }
     });
     this.#rightArrow.addEventListener('click', () => {
-      this.#offset < 1000 ? (this.#offset += 20) : (this.#offset = 1000);
-      getPokemonList(this.#offset).then(() => {
-        pokemonsList.splice(0, 20);
-        this.#cardList.remove();
-        if (main) {
-          this.#cardList = new CardList(main, pokemonsList);
-        }
-        this.#cardList.render();
-      });
+      // if (this.#offset < 1000) {
+      //   this.#offset += 20;
+      //   getPokemonList(this.#offset).then(() => {
+      //     pokemonsList.splice(0, 20);
+      //     this.#cardList.remove();
+      //     if (main) {
+      //       this.#cardList = new CardList(main, pokemonsList);
+      //     }
+      //     this.#cardList.render();
+      //   });
+      // } else {
+      //   this.#offset = 1000;
+      // }
     });
   }
 }

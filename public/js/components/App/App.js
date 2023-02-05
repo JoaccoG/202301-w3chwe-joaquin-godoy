@@ -26,7 +26,8 @@ export default class App extends Component {
         __classPrivateFieldSet(this, _App_children, [
             new Header(document.body, ['./index.html', './pages/favorites.html'], ['Home', 'Favorites']),
             new Title(this.domElement, './assets/pokemon-logo.svg', 'logo'),
-            new Pagination(this.domElement, __classPrivateFieldGet(this, _App_cardList, "f")),
+            new Pagination(this.domElement),
+            new CardList(this.domElement, pokemonsList),
         ], "f");
     }
     render() {

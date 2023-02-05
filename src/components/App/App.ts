@@ -20,7 +20,8 @@ export default class App extends Component {
         ['Home', 'Favorites']
       ),
       new Title(this.domElement, './assets/pokemon-logo.svg', 'logo'),
-      new Pagination(this.domElement, this.#cardList),
+      new Pagination(this.domElement),
+      new CardList(this.domElement, pokemonsList),
     ];
   }
 
