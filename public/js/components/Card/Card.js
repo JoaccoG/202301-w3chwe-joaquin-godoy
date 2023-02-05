@@ -9,25 +9,17 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _Card_cardData;
+var _Card_instances, _Card_cardData, _Card_getPokemonTypes, _Card_getFormattedZeros, _Card_getFormattedSizes;
 import Component from '../Component/Component.js';
 export default class Card extends Component {
     constructor(parentElement, cardData) {
         super(parentElement, 'card', 'article');
+        _Card_instances.add(this);
         _Card_cardData.set(this, void 0);
         __classPrivateFieldSet(this, _Card_cardData, cardData, "f");
     }
     render() {
         super.render();
-        let types = '';
-        for (let type of __classPrivateFieldGet(this, _Card_cardData, "f").types) {
-            types += `
-        <img
-          src="./assets/pokemon-types/${type.type.name}"
-          alt="${__classPrivateFieldGet(this, _Card_cardData, "f").name}"
-        >
-      `;
-        }
         this.domElement.innerHTML += `
       <div class="card-sprite__container">
         <img
@@ -36,17 +28,39 @@ export default class Card extends Component {
             .animated.front_default} alt="${__classPrivateFieldGet(this, _Card_cardData, "f").name}"
         >
       </div>
-      <p class="card__id">N° ${__classPrivateFieldGet(this, _Card_cardData, "f").id}/151</p>
+      <p class="card__id">${__classPrivateFieldGet(this, _Card_instances, "m", _Card_getFormattedZeros).call(this)}</p>
       <h3 class="card__name">${__classPrivateFieldGet(this, _Card_cardData, "f").name}</h3>
       <div class="card__info-size">
-        <p>weight: <span>${__classPrivateFieldGet(this, _Card_cardData, "f").weight}</span></p>
+        <p>weight: <span>${__classPrivateFieldGet(this, _Card_instances, "m", _Card_getFormattedSizes).call(this, __classPrivateFieldGet(this, _Card_cardData, "f").weight)}</span>k</p>
         |
-        <p>height: <span>${__classPrivateFieldGet(this, _Card_cardData, "f").height}</span></p>
+        <p>height: <span>${__classPrivateFieldGet(this, _Card_instances, "m", _Card_getFormattedSizes).call(this, __classPrivateFieldGet(this, _Card_cardData, "f").height)}</span>m</p>
       </div>
       <div class="card__info-type">
-        ${types}
+        ${__classPrivateFieldGet(this, _Card_instances, "m", _Card_getPokemonTypes).call(this)}
       </div>
     `;
     }
 }
-_Card_cardData = new WeakMap();
+_Card_cardData = new WeakMap(), _Card_instances = new WeakSet(), _Card_getPokemonTypes = function _Card_getPokemonTypes() {
+    let types = '';
+    for (let type of __classPrivateFieldGet(this, _Card_cardData, "f").types) {
+        types += `
+        <img
+          src="./assets/pokemon-types/${type.type.name}.png"
+          alt="${__classPrivateFieldGet(this, _Card_cardData, "f").name}"
+        >
+      `;
+    }
+    return types;
+}, _Card_getFormattedZeros = function _Card_getFormattedZeros() {
+    let idToString = __classPrivateFieldGet(this, _Card_cardData, "f").id.toString();
+    let numberOfZeros = 3 - idToString.length;
+    return `N° ${numberOfZeros > 0 ? '0'.repeat(numberOfZeros) + idToString : idToString}`;
+}, _Card_getFormattedSizes = function _Card_getFormattedSizes(data) {
+    let dataToString = data.toString();
+    let dataLength = dataToString.length;
+    if (dataLength === 1) {
+        return `0.${dataToString}`;
+    }
+    return `${dataToString.slice(0, dataLength - 1)}.${dataToString.slice(dataLength - 1)}`;
+};

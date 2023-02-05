@@ -53,6 +53,7 @@ a {
   padding: 1rem 0;
 }
 .main__title img {
-  width: 40%;
+  width: 50%;
   min-width: 300px;
+  max-width: 520px;
 }
