@@ -3,9 +3,7 @@ import Header from '../Header/Header.js';
 import Title from '../Title/Title.js';
 import Pagination from '../Pagination/Pagination.js';
 import CardList from '../Card-List/Card-List.js';
-import { getPokemonList, pokemonsList } from '../../data/data.js';
-
-getPokemonList(0);
+import { pokemonsList } from '../../data/data.js';
 
 export default class App extends Component {
   #childrens: Component[];
@@ -27,8 +25,6 @@ export default class App extends Component {
 
   render(): void {
     super.render();
-    setTimeout(() => {
-      this.#childrens.forEach((children) => children.render());
-    }, 500);
+    this.#childrens.forEach((children) => children.render());
   }
 }

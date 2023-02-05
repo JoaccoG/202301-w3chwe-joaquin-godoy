@@ -1,4 +1,4 @@
-class Component {
+export default class Component {
     constructor(parentElement, className = 'container', tag = 'main') {
         this.parentElement = parentElement;
         this.domElement = document.createElement(tag);
@@ -8,4 +8,3 @@ class Component {
         this.parentElement.appendChild(this.domElement);
     }
 }
-export default Component;

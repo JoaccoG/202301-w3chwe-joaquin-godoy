@@ -37,6 +37,7 @@ export default class Card extends Component {
         ${this.#getPokemonTypes()}
       </div>
     `;
+    this.#eventHandler();
   }
 
   #getPokemonTypes(): string {
@@ -69,5 +70,12 @@ export default class Card extends Component {
     return `${dataToString.slice(0, dataLength - 1)}.${dataToString.slice(
       dataLength - 1
     )}`;
+  }
+
+  #eventHandler() {
+    this.domElement.addEventListener('click', () => {
+      console.log('asd');
+      console.log(this.#cardData.id);
+    });
   }
 }
