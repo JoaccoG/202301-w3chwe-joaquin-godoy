@@ -1,6 +1,6 @@
 import type ComponentStructure from '../../types/types.js';
 
-class Component implements ComponentStructure {
+export default class Component implements ComponentStructure {
   domElement: HTMLElement;
 
   constructor(
@@ -16,5 +16,3 @@ class Component implements ComponentStructure {
     this.parentElement.appendChild(this.domElement);
   }
 }
-
-export default Component;

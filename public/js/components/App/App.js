@@ -15,8 +15,7 @@ import Header from '../Header/Header.js';
 import Title from '../Title/Title.js';
 import Pagination from '../Pagination/Pagination.js';
 import CardList from '../Card-List/Card-List.js';
-import { getPokemonList, pokemonsList } from '../../data/data.js';
-getPokemonList(0);
+import { pokemonsList } from '../../data/data.js';
 export default class App extends Component {
     constructor(parentElement) {
         super(parentElement, 'container');
@@ -31,9 +30,7 @@ export default class App extends Component {
     }
     render() {
         super.render();
-        setTimeout(() => {
-            __classPrivateFieldGet(this, _App_childrens, "f").forEach((children) => children.render());
-        }, 500);
+        __classPrivateFieldGet(this, _App_childrens, "f").forEach((children) => children.render());
     }
 }
 _App_childrens = new WeakMap();
