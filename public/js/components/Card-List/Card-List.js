@@ -20,10 +20,10 @@ export default class CardList extends Component {
     }
     render() {
         super.render();
-        for (let i = 0; i < __classPrivateFieldGet(this, _CardList_cardListData, "f").length; i++) {
+        for (let data of __classPrivateFieldGet(this, _CardList_cardListData, "f")) {
             let liElement = document.createElement('li');
             liElement.className = 'card-list__item';
-            new Card(liElement, __classPrivateFieldGet(this, _CardList_cardListData, "f")[i]).render();
+            new Card(liElement, data).render();
             this.domElement.appendChild(liElement);
         }
     }

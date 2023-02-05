@@ -19,3 +19,7 @@
 .pag__container i:hover {
   background-color: var(--card__bg-hover-color);
 }
+
+.button--disabled {
+  cursor: not-allowed;
+}

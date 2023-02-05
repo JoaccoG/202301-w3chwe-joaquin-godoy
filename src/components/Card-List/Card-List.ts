@@ -13,10 +13,10 @@ export default class CardList extends Component {
   render(): void {
     super.render();
 
-    for (let i = 0; i < this.#cardListData.length; i++) {
+    for (let data of this.#cardListData) {
       let liElement: HTMLLIElement = document.createElement('li');
       liElement.className = 'card-list__item';
-      new Card(liElement, this.#cardListData[i]).render();
+      new Card(liElement, data).render();
       this.domElement.appendChild(liElement);
     }
   }

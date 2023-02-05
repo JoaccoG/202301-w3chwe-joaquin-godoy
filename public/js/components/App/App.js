@@ -13,6 +13,7 @@ var _App_childrens;
 import Component from '../Component/Component.js';
 import Header from '../Header/Header.js';
 import Title from '../Title/Title.js';
+import Pagination from '../Pagination/Pagination.js';
 import CardList from '../Card-List/Card-List.js';
 import { getPokemonList, pokemonsList } from '../../data/data.js';
 getPokemonList(0);
@@ -23,14 +24,15 @@ export default class App extends Component {
         __classPrivateFieldSet(this, _App_childrens, [
             new Header(document.body, ['./index.html', './pages/favorites.html'], ['Home', 'Favorites']),
             new Title(this.domElement, './assets/pokemon-logo.svg', 'logo'),
+            new Pagination(this.domElement),
             new CardList(this.domElement, pokemonsList),
+            new Pagination(this.domElement),
         ], "f");
     }
     render() {
         super.render();
-        __classPrivateFieldGet(this, _App_childrens, "f").forEach((children) => children.render());
         setTimeout(() => {
-            __classPrivateFieldGet(this, _App_childrens, "f")[2].render();
+            __classPrivateFieldGet(this, _App_childrens, "f").forEach((children) => children.render());
         }, 500);
     }
 }
