@@ -13,12 +13,10 @@ export default class Card extends Component {
     super.render();
 
     let types = '';
-    for (let i = 0; i < this.#cardData.types.length; i++) {
-      types = `
+    for (let type of this.#cardData.types) {
+      types += `
         <img
-          src="./assets/pokemon-types/${
-            (this, this.#cardData.types[i].type.name)
-          }"
+          src="./assets/pokemon-types/${type.type.name}"
           alt="${this.#cardData.name}"
         >
       `;

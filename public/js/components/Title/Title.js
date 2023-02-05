@@ -25,7 +25,3 @@ export default class Title extends Component {
     }
 }
 _Title_logo = new WeakMap();
-fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=20')
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((err) => console.log(err));
