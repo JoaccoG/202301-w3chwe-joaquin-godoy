@@ -1,9 +1,6 @@
 import App from './components/App/App.js';
+import { getPokemonList } from './data/data.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  const app = new App(document.body);
-  app.getData().then(() => {
-    app.render();
-    document.querySelector<HTMLElement>('.fa-angle-left')?.click();
-  });
+getPokemonList(0).then(() => {
+  new App(document.body).render();
 });
