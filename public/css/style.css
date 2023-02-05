@@ -38,7 +38,6 @@ a {
   width: 100%;
   min-height: 100vh;
   padding: 6rem 1rem 1rem 1rem;
-  position: absolute;
   background: url(../assets/background-img.png);
   background-attachment: fixed;
   background-position: center;
