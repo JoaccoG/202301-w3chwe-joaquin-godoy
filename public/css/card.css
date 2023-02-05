@@ -11,12 +11,23 @@
   border-radius: 1rem;
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.8);
   transition: all 150ms ease-in-out;
-  background-color: var(--card__bg-color);
+  background-color: hsla(40, 100%, 95%, 0.7);
 }
 .card:hover {
-  background-color: var(--card__bg-hover-color);
+  background-color: hsla(40, 100%, 95%, 0.9);
   cursor: pointer;
   transform: scale(1.05);
+}
+/* -------->>> Fondo blur solo si el browser lo acepta <<<-------- */
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .card {
+    background-color: hsla(40, 100%, 95%, 0.4);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+  .card:hover {
+    background-color: hsla(40, 100%, 95%, 0.6);
+  }
 }
 
 .card-sprite__container {
@@ -35,7 +46,7 @@
   font-family: var(--sec-font);
   font-size: 0.9rem;
   font-weight: 600;
-  color: hsl(0, 0%, 60%);
+  color: hsl(0, 0%, 40%);
   margin-bottom: -0.9rem;
 }
 

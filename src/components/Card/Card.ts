@@ -12,16 +12,6 @@ export default class Card extends Component {
   render(): void {
     super.render();
 
-    let types = '';
-    for (let type of this.#cardData.types) {
-      types += `
-        <img
-          src="./assets/pokemon-types/${type.type.name}"
-          alt="${this.#cardData.name}"
-        >
-      `;
-    }
-
     this.domElement.innerHTML += `
       <div class="card-sprite__container">
         <img
@@ -32,16 +22,52 @@ export default class Card extends Component {
           } alt="${this.#cardData.name}"
         >
       </div>
-      <p class="card__id">N° ${this.#cardData.id}/151</p>
+      <p class="card__id">${this.#getFormattedZeros()}</p>
       <h3 class="card__name">${this.#cardData.name}</h3>
       <div class="card__info-size">
-        <p>weight: <span>${this.#cardData.weight}</span></p>
+        <p>weight: <span>${this.#getFormattedSizes(
+          this.#cardData.weight
+        )}</span>k</p>
         |
-        <p>height: <span>${this.#cardData.height}</span></p>
+        <p>height: <span>${this.#getFormattedSizes(
+          this.#cardData.height
+        )}</span>m</p>
       </div>
       <div class="card__info-type">
-        ${types}
+        ${this.#getPokemonTypes()}
       </div>
     `;
+  }
+
+  #getPokemonTypes() {
+    let types = '';
+    for (let type of this.#cardData.types) {
+      types += `
+        <img
+          src="./assets/pokemon-types/${type.type.name}.png"
+          alt="${this.#cardData.name}"
+        >
+      `;
+    }
+    return types;
+  }
+
+  #getFormattedZeros() {
+    let idToString: string = this.#cardData.id.toString();
+    let numberOfZeros: number = 3 - idToString.length;
+    return `N° ${
+      numberOfZeros > 0 ? '0'.repeat(numberOfZeros) + idToString : idToString
+    }`;
+  }
+
+  #getFormattedSizes(data: {}) {
+    let dataToString: string = data.toString();
+    let dataLength: number = dataToString.length;
+    if (dataLength === 1) {
+      return `0.${dataToString}`;
+    }
+    return `${dataToString.slice(0, dataLength - 1)}.${dataToString.slice(
+      dataLength - 1
+    )}`;
   }
 }
