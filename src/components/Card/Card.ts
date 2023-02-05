@@ -37,7 +37,7 @@ export default class Card extends Component {
         ${this.#getPokemonTypes()}
       </div>
     `;
-    this.#eventHandler();
+    this.#getDetailedInfo();
   }
 
   #getPokemonTypes(): string {
@@ -72,10 +72,13 @@ export default class Card extends Component {
     )}`;
   }
 
-  #eventHandler() {
+  #getDetailedInfo() {
     this.domElement.addEventListener('click', () => {
-      console.log('asd');
-      console.log(this.#cardData.id);
+      localStorage.setItem(
+        'selectedPokemon',
+        JSON.stringify(this.#cardData.id)
+      );
+      window.location.href = './info.html';
     });
   }
 }
