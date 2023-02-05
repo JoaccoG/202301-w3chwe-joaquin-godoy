@@ -1,31 +1,33 @@
 import Component from '../Component/Component.js';
 
 export default class Header extends Component {
+  #parentElement: HTMLElement;
   #navbar: HTMLElement;
   #navbarMenu: HTMLUListElement;
-  #liElement: HTMLLIElement;
-  #anchorElement: HTMLAnchorElement;
 
-  constructor(...url: string[]) {
-    super(document.body, 'header', 'header');
+  constructor(parentElement: HTMLElement, href: string[], text: string[]) {
+    super(parentElement, 'header', 'header');
+    this.#parentElement = parentElement;
     this.#navbar = document.createElement('nav');
+    this.#navbar.className = 'navbar';
     this.#navbarMenu = document.createElement('ul');
-    this.#liElement = document.createElement('li');
-    this.#anchorElement = document.createElement('a');
-    url.forEach((href) => {
-      this.createLink(this.#liElement, this.#anchorElement, href);
-    });
+    this.#navbarMenu.className = 'navbar__menu';
+    for (let i = 0; i < href.length; i++) {
+      this.addLiElement(href[i], text[i]);
+    }
   }
 
   render(): void {
-    super.render();
+    this.#parentElement.prepend(this.domElement);
     this.domElement.appendChild(this.#navbar);
     this.#navbar.appendChild(this.#navbarMenu);
   }
 
-  createLink(li: HTMLLIElement, a: HTMLAnchorElement, url: string) {
-    this.#navbarMenu.appendChild(li);
-    li.appendChild(a);
-    a.href = url;
+  addLiElement(href: string, text: string) {
+    this.#navbarMenu.innerHTML += `
+      <li>
+        <a href="${href}">${text}</a>
+      </li>
+    `;
   }
 }
