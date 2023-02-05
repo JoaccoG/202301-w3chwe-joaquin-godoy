@@ -6,11 +6,11 @@ import CardList from '../Card-List/Card-List.js';
 import { pokemonsList } from '../../data/data.js';
 
 export default class App extends Component {
-  #childrens: Component[];
+  #children: Component[];
 
   constructor(parentElement: HTMLElement) {
     super(parentElement, 'container');
-    this.#childrens = [
+    this.#children = [
       new Header(
         document.body,
         ['./index.html', './pages/favorites.html'],
@@ -25,6 +25,6 @@ export default class App extends Component {
 
   render(): void {
     super.render();
-    this.#childrens.forEach((children) => children.render());
+    this.#children.forEach((children) => children.render());
   }
 }

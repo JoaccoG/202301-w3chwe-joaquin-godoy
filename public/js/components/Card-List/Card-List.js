@@ -27,5 +27,8 @@ export default class CardList extends Component {
             this.domElement.appendChild(liElement);
         }
     }
+    remove() {
+        this.domElement.remove();
+    }
 }
 _CardList_cardListData = new WeakMap();

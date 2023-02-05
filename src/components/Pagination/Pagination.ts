@@ -1,7 +1,5 @@
 import Component from '../Component/Component.js';
 
-export let actualOffsetNumber = 0;
-
 export default class Pagination extends Component {
   #leftArrow: HTMLElement | any;
   #rightArrow: HTMLElement | any;
@@ -30,7 +28,6 @@ export default class Pagination extends Component {
 
   eventHandlers(): void {
     this.#leftArrow.addEventListener('click', () => {
-      actualOffsetNumber = actualOffsetNumber - 20;
       console.log('previous');
     });
     this.#rightArrow.addEventListener('click', () => {

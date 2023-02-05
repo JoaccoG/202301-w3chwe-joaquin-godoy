@@ -20,4 +20,8 @@ export default class CardList extends Component {
       this.domElement.appendChild(liElement);
     }
   }
+
+  remove(): void {
+    this.domElement.remove();
+  }
 }

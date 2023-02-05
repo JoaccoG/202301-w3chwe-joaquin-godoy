@@ -11,7 +11,6 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 };
 var _Pagination_leftArrow, _Pagination_rightArrow;
 import Component from '../Component/Component.js';
-export let actualOffsetNumber = 0;
 export default class Pagination extends Component {
     constructor(parentElement) {
         super(parentElement, 'pag__container', 'div');
@@ -35,7 +34,6 @@ export default class Pagination extends Component {
     }
     eventHandlers() {
         __classPrivateFieldGet(this, _Pagination_leftArrow, "f").addEventListener('click', () => {
-            actualOffsetNumber = actualOffsetNumber - 20;
             console.log('previous');
         });
         __classPrivateFieldGet(this, _Pagination_rightArrow, "f").addEventListener('click', () => {
