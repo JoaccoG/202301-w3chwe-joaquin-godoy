@@ -23,7 +23,7 @@ export default class Header extends Component {
     this.#navbar.appendChild(this.#navbarMenu);
   }
 
-  addLiElement(href: string, text: string) {
+  addLiElement(href: string, text: string): void {
     this.#navbarMenu.innerHTML += `
       <li>
         <a href="${href}">${text}</a>

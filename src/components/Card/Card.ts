@@ -39,7 +39,7 @@ export default class Card extends Component {
     `;
   }
 
-  #getPokemonTypes() {
+  #getPokemonTypes(): string {
     let types = '';
     for (let type of this.#cardData.types) {
       types += `
@@ -52,7 +52,7 @@ export default class Card extends Component {
     return types;
   }
 
-  #getFormattedZeros() {
+  #getFormattedZeros(): string {
     let idToString: string = this.#cardData.id.toString();
     let numberOfZeros: number = 3 - idToString.length;
     return `N° ${
@@ -60,7 +60,7 @@ export default class Card extends Component {
     }`;
   }
 
-  #getFormattedSizes(data: {}) {
+  #getFormattedSizes(data: {}): string {
     let dataToString: string = data.toString();
     let dataLength: number = dataToString.length;
     if (dataLength === 1) {
