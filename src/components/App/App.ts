@@ -21,7 +21,6 @@ export default class App extends Component {
       ),
       new Title(this.domElement, './assets/pokemon-logo.svg', 'logo'),
       new Pagination(this.domElement, this.#cardList),
-      new CardList(this.domElement, pokemonsList),
     ];
   }
 

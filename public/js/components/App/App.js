@@ -27,7 +27,6 @@ export default class App extends Component {
             new Header(document.body, ['./index.html', './pages/favorites.html'], ['Home', 'Favorites']),
             new Title(this.domElement, './assets/pokemon-logo.svg', 'logo'),
             new Pagination(this.domElement, __classPrivateFieldGet(this, _App_cardList, "f")),
-            new CardList(this.domElement, pokemonsList),
         ], "f");
     }
     render() {
