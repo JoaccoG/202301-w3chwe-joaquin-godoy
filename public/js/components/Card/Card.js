@@ -31,9 +31,9 @@ export default class Card extends Component {
       <p class="card__id">${__classPrivateFieldGet(this, _Card_instances, "m", _Card_getFormattedZeros).call(this)}</p>
       <h3 class="card__name">${__classPrivateFieldGet(this, _Card_cardData, "f").name}</h3>
       <div class="card__info-size">
-        <p>weight: <span>${__classPrivateFieldGet(this, _Card_instances, "m", _Card_getFormattedSizes).call(this, __classPrivateFieldGet(this, _Card_cardData, "f").weight)}</span>k</p>
+        <p>weight: <span>${__classPrivateFieldGet(this, _Card_instances, "m", _Card_getFormattedSizes).call(this, __classPrivateFieldGet(this, _Card_cardData, "f").weight)}kg</span></p>
         |
-        <p>height: <span>${__classPrivateFieldGet(this, _Card_instances, "m", _Card_getFormattedSizes).call(this, __classPrivateFieldGet(this, _Card_cardData, "f").height)}</span>m</p>
+        <p>height: <span>${__classPrivateFieldGet(this, _Card_instances, "m", _Card_getFormattedSizes).call(this, __classPrivateFieldGet(this, _Card_cardData, "f").height)}m</span></p>
       </div>
       <div class="card__info-type">
         ${__classPrivateFieldGet(this, _Card_instances, "m", _Card_getPokemonTypes).call(this)}

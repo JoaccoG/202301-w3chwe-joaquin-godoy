@@ -37,7 +37,7 @@ a {
 .container {
   width: 100%;
   min-height: 100vh;
-  padding: 6rem 1rem 1rem 1rem;
+  padding: 6.5rem 1rem 1rem 1rem;
   background: url(../assets/background-img.png);
   background-attachment: fixed;
   background-position: center;

@@ -36,9 +36,13 @@
   height: 100%;
 }
 .card__sprite {
-  width: 60%;
+  width: 50%;
+  min-width: 130px;
+  max-width: 160px;
+  min-height: 130px;
+  max-height: 160px;
   position: absolute;
-  top: -50%;
+  top: -55px;
   left: 20%;
 }
 
@@ -46,7 +50,7 @@
   font-family: var(--sec-font);
   font-size: 0.9rem;
   font-weight: 600;
-  color: hsl(0, 0%, 40%);
+  color: hsl(0, 0%, 30%);
   margin-bottom: -0.9rem;
 }
 
@@ -62,6 +66,12 @@
   font-family: var(--sec-font);
   font-size: 0.9rem;
   font-weight: 600;
+}
+.card__info-size p {
+  color: hsl(0, 0%, 30%);
+}
+.card__info-size span {
+  color: black;
 }
 
 .card__info-type {

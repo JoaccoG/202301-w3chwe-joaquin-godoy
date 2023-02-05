@@ -27,11 +27,11 @@ export default class Card extends Component {
       <div class="card__info-size">
         <p>weight: <span>${this.#getFormattedSizes(
           this.#cardData.weight
-        )}</span>k</p>
+        )}kg</span></p>
         |
         <p>height: <span>${this.#getFormattedSizes(
           this.#cardData.height
-        )}</span>m</p>
+        )}m</span></p>
       </div>
       <div class="card__info-type">
         ${this.#getPokemonTypes()}
