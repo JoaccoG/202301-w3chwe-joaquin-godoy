@@ -1,7 +1,7 @@
 export const pokemonsList = [];
 export const getPokemonList = (offset) => {
     return new Promise((resolve, reject) => {
-        fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`)
+        fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=151`)
             .then((response) => response.json())
             .then((data) => {
             let dataResults = data.results;

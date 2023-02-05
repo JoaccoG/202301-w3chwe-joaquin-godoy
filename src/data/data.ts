@@ -3,8 +3,8 @@ import { PokemonsList } from '../types/types.js';
 export const pokemonsList: PokemonsList[] = [];
 
 export const getPokemonList = (offset: number) => {
-  return new Promise((resolve: any, reject: any) => {
-    fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`)
+  return new Promise<void>((resolve, reject) => {
+    fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=151`)
       .then((response) => response.json())
       .then((data) => {
         let dataResults: [] = data.results;

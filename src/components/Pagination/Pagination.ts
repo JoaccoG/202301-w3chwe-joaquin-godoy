@@ -1,40 +1,26 @@
 import Component from '../Component/Component.js';
 
-export let actualOffsetNumber = 0;
-
 export default class Pagination extends Component {
-  #leftArrow: HTMLElement | any;
-  #rightArrow: HTMLElement | any;
+  leftArrow: HTMLElement;
+  rightArrow: HTMLElement;
 
   constructor(parentElement: HTMLElement) {
     super(parentElement, 'pag__container', 'div');
+    this.leftArrow = document.createElement('div');
+    this.rightArrow = document.createElement('div');
   }
 
   render(): void {
     super.render();
-
-    this.#leftArrow = this.generatePagination('left');
-    this.#rightArrow = this.generatePagination('right');
-    this.eventHandlers();
+    this.generatePagination(this.leftArrow, 'left');
+    this.generatePagination(this.rightArrow, 'right');
   }
 
-  generatePagination(direction: string): HTMLElement {
-    let container: HTMLElement = document.createElement('div');
-    container.className = `pag-container__${direction}`;
-    let arrow: HTMLElement = document.createElement('i');
-    arrow.className = `fa-solid fa-angle-${direction}`;
-    container.appendChild(arrow);
-    this.domElement.appendChild(container);
-    return container;
-  }
-
-  eventHandlers(): void {
-    this.#leftArrow.addEventListener('click', () => {
-      actualOffsetNumber = actualOffsetNumber - 20;
-      console.log('previous');
-    });
-    this.#rightArrow.addEventListener('click', () => {
-      console.log('next');
-    });
+  generatePagination(arrow: HTMLElement, direction: string): void {
+    arrow.innerHTML = `
+        <i class="fa-solid fa-angle-${direction}"></i>
+    `;
+    arrow.className = `pag-container__${direction}`;
+    this.domElement.appendChild(arrow);
   }
 }
