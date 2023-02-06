@@ -13,7 +13,7 @@ export default class App extends Component {
     this.#children = [
       new Header(
         document.body,
-        ['./index.html', './pages/favorites.html'],
+        ['./index.html', './favorites.html'],
         ['Home', 'Favorites']
       ),
       new Title(this.domElement, './assets/pokemon-logo.svg', 'logo'),

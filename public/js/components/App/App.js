@@ -21,7 +21,7 @@ export default class App extends Component {
         super(parentElement, 'container');
         _App_children.set(this, void 0);
         __classPrivateFieldSet(this, _App_children, [
-            new Header(document.body, ['./index.html', './pages/favorites.html'], ['Home', 'Favorites']),
+            new Header(document.body, ['./index.html', './favorites.html'], ['Home', 'Favorites']),
             new Title(this.domElement, './assets/pokemon-logo.svg', 'logo'),
             new Pagination(this.domElement),
             new CardList(this.domElement, pokemonsList),
