@@ -29,3 +29,13 @@ export const getPokemonList = (offset: number) => {
       .catch((err) => reject(err));
   });
 };
+
+export let pokemonData: PokemonsList;
+export const getPokemonById = (id: number) => {
+  return fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log('dentro', data);
+    })
+    .catch((err) => console.warn(err));
+};

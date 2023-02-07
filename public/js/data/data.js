@@ -26,3 +26,12 @@ export const getPokemonList = (offset) => {
             .catch((err) => reject(err));
     });
 };
+export let pokemonData;
+export const getPokemonById = (id) => {
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+        .then((response) => response.json())
+        .then((data) => {
+        console.log('dentro', data);
+    })
+        .catch((err) => console.warn(err));
+};

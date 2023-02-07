@@ -1,28 +1,22 @@
-# Week 3 - Challenge WeekEnd
+# Bootcamp Challenge - Week 2, Weekend challenge
 
-![Logo Pokémon](./public/assets/pokemon-logo.svg)
+## PokeAPI Pokedex
 
-## Pokémon
+The listing of all pokémon will be fed from the PokeAPI, and should be paginated. The listing should be accompanied by two buttons for pagination.
+From anywhere in the index page, the user should be able to click any pokemon and go to a different page with more data about that specific pokemon.<br>
+[PokiApi](https://pokeapi.co/).
 
-Esta aplicación tendrá tres páginas:
+### Requirements.
 
-- Todos los pokémon
-- Mis pokémon
-- Detalle de pokémon
+- BEM Methodology.
+- Jest testing.
+- Husky hooks.
+- GitHub Actions.
+- Deploy repository on Netlify.
+- Upload repository to SonarCloud.
+- Protect main branch:
+  - Can't push without pull request.
+- TypeScript.
 
-El listado de todos los pokémon se alimentará de la PokéAPI, y deberá ir paginado. El listado deberá ir acompañado de dos botones, para avanzar y retroceder de página. También debe mostrar el total de pokèmon mostrados vs. el total de pokèmon que existen (p.e. 10/1000). Siempre debe mostrar los pokémon en el mismo orden.
-
-El usuario debe poder añadir los pokémon que quiera a su listado local de favoritos, al que puede acceder en la página Mis pokémon. El listado de Mis pokémon se alimentará de [una API local](/week3/challenges/pokeapi). El usuario debería poder eliminar pokémon de su listado local, y también modificar algún/unos dato/s.
-
-Desde cualquiera de los listados, el usuario debería poder ir al detalle de un pokémon, donde se le mostrarán más datos. A esta página de detalle se llega pasando una id por la URL (la id del pokémon que queremos ver).
-
-- TS
-- BEM
-- HTML semántico y válido
-- Testing
-- Husky
-- GitHub actions (workflow `Audit`)
-- App desplegada en Netlify/Vercel
-- API desplegada en Render
-
-Documentación de la API local: https://jsonplaceholder.typicode.com/guide/
+[Production site (click)](https://202302-w3chwe-joaquin-godoy.netlify.app/) <br>
+[SonarCloud (click)](https://sonarcloud.io/project/overview?id=JoaccoG_202301-w3chwe-joaquin-godoy)
